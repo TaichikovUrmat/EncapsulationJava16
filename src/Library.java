@@ -101,15 +101,20 @@ public class Library {
 
     // TODO delete book id
     public void deleteBookId(Long bookId) {
+        boolean found = false;
         for (int i = 0; i < bookCount; i++) {
             if (books[i].getId().equals(bookId)) {
+                found = true;
                 for (int j = i; j < bookCount - 1; j++) {
-                    books[j] = books[j + 1];  // 100+1
+                    books[j] = books[j + 1];  // Сдвигаем элементы влево
                 }
-                bookCount--; // -1 : 100
+                bookCount--;  // Уменьшаем количество книг
+                System.out.println("Book deleted!");
+                break;  // Прерываем цикл, так как книга найдена и удалена
             }
-            System.out.println("delete ! ");
-            break;
+        }
+        if (!found) {
+            System.out.println("Book with id " + bookId + " not found.");
         }
     }
 
