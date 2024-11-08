@@ -12,15 +12,15 @@ public class Main {
         library.addBook(new Book(2L,"Alipe",10000, LocalDate.of(1996,8,24),"Arabaev I"));
         // TODO  get All
 //        library.getAllBooks();a
-        library.getByBookId(2L);
+//        library.getByBookId(2L);
         // TODO  update
 //        library.updateBookId(1L,new Book(1L,"Syngan kylych",560, LocalDate.of(2016,8,24),"Kasymaly J"));
 //        System.out.println("-------------------------------");
 //        library.getAllBooks();
         // TODO  delete book id
 //        library.deleteBookId(1L);
-//        library.deleteBookId(2L);
-//        library.getAllBooks();
+        library.deleteBookId(2L);
+        library.getAllBooks();
 
 
     }
