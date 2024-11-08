@@ -69,14 +69,10 @@ public class Library {
     // TODO get by id Book
     public void getByBookId(Long bookId) {
 
-
-//         1 2 3 4 5 5 6 7
-
         boolean islaik = false;
         for (int i = 0; i < bookCount; i++) {
-            if (!books[i].getId().equals(bookId)) {
+            if (books[i].getId().equals(bookId)) {
                 islaik = true;
-            }else if (islaik) {
                 System.out.printf("""
                         id : %s
                         bookName: %s
@@ -84,7 +80,11 @@ public class Library {
                         publisherYear: %s
                         authorName: %s
                         """, books[i].getId(), books[i].getBookName(), books[i].getPrice(), books[i].getPublisherYear(), books[i].getAuthorName());
+
             }
+        }
+        if (!islaik){
+            System.out.println("Book with id " + bookId + " not found.");
         }
     }
 
